@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name = "author" content = "wannafy">
+  <meta name = "author" content = "모현 맛집지도 서비스">
+  <meta name = "keywords" content = "코딩, 맛집, 맛집지도, 유튜버맛집">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./map.css">
+  <title>Document</title>
+</head> 
+<body>
+  <nav>
+    <div class="inner">
+      <div class="nav-container">
+        <h1 class="nav-title">모현 맛집지도</h1>
+        <button class="nav-contact">Contact</button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <section id="category">
+      <div class="inner">
+        <div class="category-container">
+          <h2 class="category-title">맛집지도 카테고리를 선택하세요</h2>
+          <div class="category-list">
+            <button class="category-item" id="korea">한식</button>
+            <button class="category-item" id="china">중식</button>
+            <button class="category-item" id="japan">일식</button>
+            <button class="category-item" id="america">양식</button>
+            <button class="category-item" id="wheat">분식</button>
+            <button class="category-item" id="meat">구이</button>
+            <button class="category-item" id="sushi">생선/회</button>
+            <button class="category-item" id="bar">술집</button>
+            <button class="category-item" id="chickenPizzaBurger">치킨/피자/버거</button>
+            <button class="category-item" id="etc">기타</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="map" class="inner"></div>
+  </main>
+
+  
+
+  <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c496fbc3b298e1d444dd5ce497660610&libraries=services"></script>
+  <script defer src="./axios-script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</body>
+</html>
