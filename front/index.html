@@ -7,24 +7,38 @@
   <meta name = "author" content = "wannafy">
   <meta name = "author" content = "모현 맛집지도 서비스">
   <meta name = "keywords" content = "코딩, 맛집, 맛집지도, 유튜버맛집">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./map.css">
+  <script defer src="./axios-script.js"></script>
+  <script defer src="./index.js"></script>
+
   <title>Document</title>
 </head> 
 <body>
+  <!-- <div class="modal">
+    <div class="randomMenuModal">
+      <p>오늘의 식사메뉴는</p>
+      <p><span class="recommandedMenu">돈까스</span> 어때요?</p>
+      <div>
+        <button class="btn goRestaurantList">식당보러가기</button>
+        <button class="btn closeModalBtn">다른거 먹을래요</button>
+      </div>
+    </div>
+  </div> -->
   <nav>
     <div class="inner">
       <div class="nav-container">
-        <h1 class="nav-title">모현 맛집지도</h1>
+        <h1 class="nav-title">맛집지도</h1>
         <button class="nav-contact">Contact</button>
       </div>
     </div>
   </nav>
-  <main>
+  <main class="inner">
     <section id="category">
       <div class="inner">
         <div class="category-container">
-          <h2 class="category-title">맛집지도 카테고리를 선택하세요</h2>
+          <h2 class="category-title">카테고리를 선택하세요</h2>
           <div class="category-list">
             <button class="category-item" id="korea">한식</button>
             <button class="category-item" id="china">중식</button>
@@ -35,18 +49,43 @@
             <button class="category-item" id="sushi">생선/회</button>
             <button class="category-item" id="bar">술집</button>
             <button class="category-item" id="chickenPizzaBurger">치킨/피자/버거</button>
+            <button class="category-item" id="coffeeDessert">카페/디저트</button>
+            <button class="category-item" id="campus">학식</button>
             <button class="category-item" id="etc">기타</button>
+            <button class="category-item" id="randomMenu">메뉴추천</button>
+            <button class="category-item" id="open">영업중</button>
+            <button class="category-item" id="deliveryTogether">같이시켜요</button>
           </div>
         </div>
       </div>
     </section>
-    <div id="map" class="inner"></div>
+    <div class="restaurantListContainer">
+      <div class="listRemoveBtn">
+        <i class="fa-solid fa-caret-left"></i>
+      </div>
+      <div class="listCreateBtn">
+        <i class="fa-solid fa-caret-right"></i>
+      </div>
+      <ul class="restaurantList">
+        <!-- <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li>
+        <li class="restaurantElement">하하</li> -->
+      </ul>
+    </div>
+    <div id="map"></div>
   </main>
 
   
 
   <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c496fbc3b298e1d444dd5ce497660610&libraries=services"></script>
-  <script defer src="./axios-script.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js" integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
