@@ -1,17 +1,11 @@
 /*인포윈도우 설정*/
 .infowindow {
   width: 25rem;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: white;
-}
-
-.infowindow-img-container {
-  width: 100%;
-  overflow: hidden;
   border-radius: 5px;
 }
 .infowindow-img {
+  display: block;
+  margin: auto;
   width: 100%;
 }
 .infowindow-title {

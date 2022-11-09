@@ -68,15 +68,13 @@ function getContent(data) {
   // 인포윈도우 가공하기
   return `
   <div class="infowindow">
-      <div class="infowindow-img-container">
-        <img src="https://img.hankyung.com/photo/202109/01.27608010.1-1200x.jpg" class="infowindow-img">
-      </div>
-      <div class="infowindow-body">
-        <h5 class="infowindow-title">${data.title}</h5>
-        <p class="infowindow-address">${data.address}</p>
-        <a href="${data.videoUrl}" class="infowindow-btn" target="_blank">더보기</a>
-      </div>
+    <img src="https://img.hankyung.com/photo/202109/01.27608010.1-1200x.jpg" class="infowindow-img">
+    <div class="infowindow-body">
+      <h5 class="infowindow-title">${data.title}</h5>
+      <p class="infowindow-address">${data.address}</p>
+      <a href="${data.videoUrl}" class="infowindow-btn" target="_blank">더보기</a>
     </div>
+  </div>
   `;
 }
 
@@ -199,14 +197,24 @@ async function categoryHandler(event) {
     randomMenuBtn.addEventListener('click', ()=>{
       console.log(randomMenuBtn)
       modal.classList.add('show')
+      randomMenu()
+    })
+    const refreshMenuBtn = document.querySelector('.refreshMenuBtn')
+    refreshMenuBtn.addEventListener('click', () => {
+      randomMenu()
     })
 
     const closeModalBtn = document.querySelector('.closeModalBtn')
     closeModalBtn.addEventListener('click', ()=> {
-      console.log('closemodalbtn', closeModalBtn)
       modal.classList.remove('show')
     })
     
+    const goRestaurantListBtn = document.querySelector('.goRestaurantListBtn')
+    goRestaurantListBtn.addEventListener('click', () => {
+      modal.classList.remove('show')
+      toggleRestaurantList()
+      
+    })
     return
   }
 
@@ -225,6 +233,16 @@ async function categoryHandler(event) {
   }
 }
 
+function randomMenu() {
+  const recommandedMenu = document.querySelector('.recommandedMenu')
+  menu = [
+    '돈까스','김치찌개','치킨','피자','생선구이','육회','부대찌개','제육볶음',
+    '된장찌개','청국장','닭볶음탕','파스타', '삼겹살', '족발', '보쌈', '떡볶이',
+    '초밥', '냉면', '햄버거', '빵', '낙지볶음', '국밥'
+  ]
+  menuIdx = Math.floor(Math.random() * menu.length);
+  recommandedMenu.innerText = menu[menuIdx]
+}
 let markerArray = [];
 function closeMarker() {
   for (marker of markerArray) {
@@ -445,15 +463,16 @@ const listCreateBtn = document.querySelector('.listCreateBtn');
 const listRemoveBtn = document.querySelector('.listRemoveBtn');
 listCreateBtn.addEventListener('click', ()=> {
   console.log(listCreateBtn)
-  restaurantList.classList.toggle('clicked')
-  listCreateBtn.classList.toggle('clicked')
-  listRemoveBtn.classList.toggle('clicked')
+  toggleRestaurantList()
   createRestaurantList()
 })
 listRemoveBtn.addEventListener('click', ()=>{
   console.log(listRemoveBtn)
+  toggleRestaurantList()
+})
+
+function toggleRestaurantList() {
   restaurantList.classList.toggle('clicked')
   listRemoveBtn.classList.toggle('clicked')
   listCreateBtn.classList.toggle('clicked')
-})
-
+}
